@@ -1,0 +1,3 @@
+function viewProduct(name, price) {
+    alert(name+"-"+price)
+}
