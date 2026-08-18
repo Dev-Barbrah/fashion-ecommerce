@@ -3,30 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fashion E-commerce</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Fashion E-commerce</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section class="hero">
-        <div class="hero-content">
-            <p
-            <h2>Welcome to Our Fashion Store</h2>
-            <p>Explore the latest trends and styles in fashion.</p>
-            <a href="#" class="btn">Shop Now</a>
-        <h2>Discover the Latest Trends</h2>
-        <p>Shop the newest arrivals in fashion and accessories.</p>
-        <button class="btn">Shop Now</button>
+    <nav>
+        <h1>FASHION</h1>
 
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<section class="hero">
+    <div class="hero-content">
+        <p>WELCOME TO OUR COLLECTION</p>
+        <h2>Style That Speaks For You</h2>
+        <p>Discover elegant fashion pieces made for confidence, beauty and individuality.</p>
+        <button>Shop Now</button>
+    </div>
+</section>
+<section class="products">
+    <h2>Featured Collection</h2>
+    <p class="section-intro">Discover pieces selected for effortless style.</p>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="image/kaftan.jpg" alt="Kaftan Dress">
+            </div>
+            <h3>kaftan dress</h3>
+            <p>KSh 1,000</p>
+            <button onclick="viewProduct('kaftan-dress','Ksh 1,000')">View Product</button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="image/wide leg.jpg" alt="Two piece wide leg office set">
+            </div>
+            <h3>Two piece wide leg office set</h3>
+            <p>KSh 1,500</p>
+            <button onclick="viewProduct('wide-leg-office-set','Ksh 1,500')">View Product</button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="image/sweatpant.jpg" alt="Two piece sweatpants set">
+            </div>
+            <h3>Two piece sweatpants set</h3>
+            <p>KSh 1,200</p>
+            <button onclick="viewProduct('sweatpants-set','Ksh 1,200')">View Product</button>
+        </div>
+         <div class="product-card">
+            <div class="product-image">
+                <img src="image/skater.jpg" alt="Skater Dress">
+            </div>
+            <h3>skater dress</h3>
+            <p>KSh 1,800</p>
+            <button onclick="viewProduct('skater-dress','Ksh 1,800')">View Product</button>
+        </div>
+
+         <div class="product-card">
+            <div class="product-image">
+                <img src="image/red bottom.jpg" alt="Original Red Bottom Heels">
+            </div>
+            <h3>original red bottom heels</h3>
+            <p>KSh 2,700</p>
+            <button onclick="viewProduct('original-red-bottom-heels','Ksh 2,700')">View Product</button>
+        </div>
+             <div class="product-card">
+            <div class="product-image">
+                <img src="image/classy heels.jpg" alt="Classy Heels">
+            </div>
+            <h3>Classy heels</h3>
+            <p>KSh 2,200</p>
+            <button onclick="viewProduct('classy-heels','Ksh 2,200')">View Product</button>
+        </div>
+         <div class="product-card">
+            <div class="product-image">
+                <img src="image/heels@1800.jpg" alt="Classy Heels">
+            </div>
+            <h3>Classy heels</h3>
+            <p>KSh 1,800</p>
+            <button onclick="viewProduct('classy-heels-1800','Ksh 1,800')">View Product</button>
+
+
+        </div>
+
+
+
+    </div>
+</section>
+<section id="product details" class="product-details"
+<h2 id="Product Details"></h2>
+<p id="Detail price ""></p>"
+<p id="Detail description"></p>
+<button id="Add to Cart">Add to Cart</button>
+</section>
+    <p>We are a fashion brand dedicated to providing stylish and high-quality clothing for individuals who want to express themselves through fashion. Our collections are designed to inspire confidence and celebrate individuality.</p>
+<script>
+    
+    function viewProduct(productName, productPrice) {
+        alert("You are viewing the product: " + productName + " with a price of " + productPrice);
+        document.getElementById("Product Details").innerText = productName;
+        document.getElementById("Detail price").innerText = productPrice;
+        document.getElementById("Detail description").innerText = "A beatiful and stylish " + productName + " that is perfect for any occasion. Made with high-quality materials, this piece is designed to make you look and feel your best.";
+        document.getElementById("Product Details").style.display = "block";
+    }
+</script>
 </body>
 </html>
