@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velour Fashion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <div>
+            <img src="image/logo.jpg" alt="Velour Logo" class="logo">
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#products">Shop</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#cart">Cart (<span id="cart-count">0</span>)</a></li>
+        </ul>
+    </nav>
+</header>
+<section class="hero"id="home">
+    <div class="hero-content">
+        <p>WELCOME TO OUR COLLECTION</p>
+        <h2>Style That Speaks For You</h2>
+        <p>
+            Discover elegant fashion pieces made for confidence,
+            beauty and individuality.
+        </p>
+        <button onclick="document.getElementById('products').scrollIntoView()">
+            Shop Now
+        </button>
+    </div>
+</section>
+<section class="products" id="products">
+    <h2>Featured Collection</h2>
+    <p class="section-intro">
+        Discover pieces selected for effortless style.
+    </p>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="image/kaftan.jpg" alt="Kaftan Dress">
+            </div>
+            <h3>Kaftan Dress</h3>
+            <p>KSh 1,000</p>
+            <button onclick="viewProduct('Kaftan Dress', 'KSh 1,000')">
+                View Product
+            </button>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="image/wide leg.jpg" alt="Two Piece Wide Leg Office Set">
+            </div>
+            <h3>Two Piece Wide Leg Office Set</h3>
+            <p>KSh 1,500</p>
+            <button onclick="viewProduct('Two Piece Wide Leg Office Set', 'KSh 1,500')">
+                View Product
+            </button>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="image/sweatpant.jpg" alt="Two Piece Sweatpants Set">
+            </div>
+            <h3>Two Piece Sweatpants Set</h3>
+            <p>KSh 1,200</p>
+            <button onclick="viewProduct('Two Piece Sweatpants Set', 'KSh 1,200')">
+                View Product
+            </button>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="image/skater.jpg" alt="Skater Dress">
+            </div>
+            <h3>Skater Dress</h3>
+            <p>KSh 1,800</p>
+            <button onclick="viewProduct('Skater Dress', 'KSh 1,800')">
+                View Product
+            </button>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="image/red bottom.jpg" alt="Original Red Bottom Heels">
+            </div>
+            <h3>Original Red Bottom Heels</h3>
+            <p>KSh 2,700</p>
+            <button onclick="viewProduct('Original Red Bottom Heels', 'KSh 2,700')">
+                View Product
+            </button>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="image/classy heels.jpg" alt="Classy Heels">
+            </div>
+            <h3>Classy Heels</h3>
+            <p>KSh 2,200</p>
+            <button onclick="viewProduct('Classy Heels', 'KSh 2,200')">
+                View Product
+            </button>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="image/heels@1800.jpg" alt="Classy Heels">
+            </div>
+            <h3>Classy Heels</h3>
+            <p>KSh 1,800</p>
+            <button onclick="viewProduct('Classy Heels', 'KSh 1,800')">
+                View Product
+            </button>
+        </div>
+        </section>
+<section id="product-details" class="product-details" style="display: none;">
+    <img id="product-detail-image" src="" alt="Product">
+    <h2 id="product-name"></h2>
+    <p id="product-price"></p>
+    <p id="product-description"></p>
+    <button id="add-to-cart">
+        <label for="product-size">Select Size:</label>
+
+<select id="product-size">
+    <option value="">Choose a size</option>
+    <option value="S">Small (S)</option>
+    <option value="M">Medium (M)</option>
+    <option value="L">Large (L)</option>
+    <option value="XL">Extra Large (XL)</option>
+</select>
+        Add to Cart
+    </button>
+</section>
+<section id="cart" class="cart-section">
+    <h2>Your Cart</h2>
+    <div id="cart-items">
+        <p>Your cart is empty.</p>
+    </div>
+    <p id="cart-total">Total: KSh 0</p>
+    <button id="checkout-button">Proceed to Checkout</button>
+</section>
+<section id="checkout" class="checkout-section">
+    <h2>Checkout</h2>
+    <form id="checkout-form">
+        <label for="customer-name">Full Name</label>
+        <input type="text" id="customer-name" required>
+        <label for="customer-phone">Phone Number</label>
+        <input type="tel" id="customer-phone" required>
+        <label for="customer-location">Delivery Location</label>
+        <input type="text" id="customer-location" required>
+        <label for="payment-method">Payment Method</label>
+        <select id="payment-method" required>
+            <option value="">Select Payment Method</option>
+            <option value="M-Pesa">M-Pesa</option>
+            <option value="Cash on Delivery">Cash on Delivery</option>
+        </select>
+        <button type="submit">Place Order</button>
+    </form>
+</section>
+<section class="about">
+    <p>
+        We are a fashion brand dedicated to providing stylish and
+        high-quality clothing for individuals who want to express
+        themselves through fashion. Our collections are designed to
+        inspire confidence and celebrate individuality.
+    </p>
+</section>
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>We would love to hear from you.</p>
+    <div class="contact-info">
+        <p><strong>Phone:</strong> +254 723833630</p>
+        <p><strong>Email:</strong> velourfashion@gmail.com</p>
+        <p><strong>Location:</strong> Nairobi, Kenya</p>
+    </div>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
