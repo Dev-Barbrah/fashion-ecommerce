@@ -1,17 +1,5 @@
 console.log("JAVASCRIPT IS CONNECTED!");
-
-
-// ===============================
-// CART
-// ===============================
-
 let cart = [];
-
-
-// ===============================
-// PRODUCT INFORMATION
-// ===============================
-
 const productImages = {
 
     "Kaftan Dress":
@@ -62,12 +50,6 @@ const productDescriptions = {
         "A stylish and versatile pair of heels that adds a polished touch to any outfit while keeping your look effortlessly chic."
 
 };
-
-
-// ===============================
-// VIEW PRODUCT
-// ===============================
-
 function viewProduct(productName, productPrice) {
 
     const details =
@@ -90,33 +72,15 @@ function viewProduct(productName, productPrice) {
 
     const quantityInput =
         document.getElementById("product-quantity");
-
-
-    // Product name
     productNameElement.textContent =
         productName;
-
-
-    // Product price
     productPriceElement.textContent =
         productPrice;
-
-
-    // Product image
     productImage.src =
         productImages[productName];
-
-
-    // Product description
     productDescriptionElement.textContent =
         productDescriptions[productName];
-
-
-    // Reset quantity
     quantityInput.value = 1;
-
-
-    // Shoe sizes
     const isShoe =
         productName === "Original Red Bottom Heels" ||
         productName === "Classy Heels" ||
@@ -167,26 +131,14 @@ function viewProduct(productName, productPrice) {
         `;
 
     }
-
-
-    // Show details
     details.style.display =
         "block";
-
-
-    // Scroll to details
     details.scrollIntoView({
         behavior: "smooth",
         block: "start"
     });
 
 }
-
-
-// ===============================
-// PRODUCT QUANTITY
-// ===============================
-
 document
     .getElementById("increase-product")
     .addEventListener("click", function () {
@@ -225,12 +177,6 @@ document
             quantity;
 
     });
-
-
-// ===============================
-// ADD TO CART
-// ===============================
-
 document
     .getElementById("add-to-cart")
     .addEventListener("click", function () {
@@ -248,18 +194,12 @@ document
             Number(
                 document.getElementById("product-quantity").value
             );
-
-
-        // Make sure size is selected
         if (productSize === "") {
 
             alert("Please select a size.");
 
             return;
         }
-
-
-        // Make sure quantity is valid
         if (
             productQuantity < 1 ||
             productQuantity > 10
@@ -269,9 +209,6 @@ document
 
             return;
         }
-
-
-        // Check if same product AND same size already exists
         const existingProduct =
             cart.find(function (product) {
 
@@ -316,12 +253,6 @@ document
         );
 
     });
-
-
-// ===============================
-// UPDATE CART
-// ===============================
-
 function updateCart() {
 
     const cartCount =
@@ -340,9 +271,6 @@ function updateCart() {
 
 
     cartItems.innerHTML = "";
-
-
-    // Empty cart
     if (cart.length === 0) {
 
         cartItems.innerHTML = `
@@ -365,9 +293,6 @@ function updateCart() {
 
         return;
     }
-
-
-    // Display cart products
     cart.forEach(function (product, index) {
 
         const price =
@@ -453,25 +378,13 @@ function updateCart() {
         cartItems.appendChild(item);
 
     });
-
-
-    // Cart count
     cartCount.textContent =
         totalItems;
-
-
-    // Cart total
     cartTotal.textContent =
         "Total: KSh " +
         totalPrice.toLocaleString();
 
 }
-
-
-// ===============================
-// INCREASE CART QUANTITY
-// ===============================
-
 function increaseQuantity(index) {
 
     cart[index].quantity++;
@@ -479,12 +392,6 @@ function increaseQuantity(index) {
     updateCart();
 
 }
-
-
-// ===============================
-// DECREASE CART QUANTITY
-// ===============================
-
 function decreaseQuantity(index) {
 
     if (cart[index].quantity > 1) {
@@ -501,12 +408,6 @@ function decreaseQuantity(index) {
     updateCart();
 
 }
-
-
-// ===============================
-// REMOVE FROM CART
-// ===============================
-
 function removeFromCart(index) {
 
     cart.splice(index, 1);
@@ -514,12 +415,6 @@ function removeFromCart(index) {
     updateCart();
 
 }
-
-
-// ===============================
-// CHECKOUT BUTTON
-// ===============================
-
 document
     .getElementById("checkout-button")
     .addEventListener("click", function () {
@@ -541,21 +436,12 @@ document
             });
 
     });
-
-
-// ===============================
-// CHECKOUT FORM
-// ===============================
-
 document
     .getElementById("checkout-form")
     .addEventListener("submit", function (event) {
 
         event.preventDefault();
-
-
-        // Make sure cart has products
-        if (cart.length === 0) {
+ if (cart.length === 0) {
 
             alert(
                 "Your cart is empty. Please add a product first."
@@ -578,7 +464,6 @@ document
             document.getElementById("payment-method").value;
 
 
-        // Start WhatsApp message
         let orderMessage =
             "Hello Velour Fashion! I would like to place an order.%0A%0A";
 
@@ -660,7 +545,6 @@ document
             total.toLocaleString();
 
 
-        // Velour Fashion WhatsApp number
         const whatsappNumber =
             "254723833630";
 
@@ -671,30 +555,19 @@ document
             "?text=" +
             orderMessage;
 
-
-        // Open WhatsApp
         window.open(
             whatsappURL,
             "_blank"
         );
 
-
-        // Clear cart
         cart = [];
 
         updateCart();
 
 
-        // Reset checkout form
         document
             .getElementById("checkout-form")
             .reset();
 
     });
-
-
-// ===============================
-// INITIAL CART
-// ===============================
-
 updateCart();
