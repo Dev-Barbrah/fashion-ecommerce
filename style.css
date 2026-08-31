@@ -700,3 +700,17 @@ footer {
     }
 
 }
+.contact-info i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.contact-info a {
+    color: #c9898c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
